@@ -7,19 +7,18 @@
 var lengthOfLongestSubstring = function(s) {
     array_of_substrings = [];
     let substring = ""
-    //Check each character in a string
     for (i=0; i<s.length; i++) {
         if (substring.includes(s[i])) {
-            array_of_substrings.push(s[i])
-            console.log(array_of_substrings)
-        } else {
-            substring = substring + s[i]
+            console.log(`Found repeated character ${s[i]} & i is currently ${i}`)
+            array_of_substrings.push(substring)
+            console.log(`Array is currently ${array_of_substrings}`)
+            substring = substring.replace(substring, s[i])
+        } else { 
+            substring = substring + s[i]    
             console.log(`substring is currently ${substring}`)
+            console.log(`i is currently ${i}`)
         }
     }
-
-    //For each new character push it into an array of substrings
-    //If a character is repeated in a substring break execution & start a new substring to push into the array
     //Once all characters have been checked find the substring in the array that has the longest length property 
     //Return the length of longest substring
 };
