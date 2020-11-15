@@ -8,9 +8,11 @@ var lengthOfLongestSubstring = function(s) {
     array_of_substrings = [];
     let substring = ""
 
+    //Split any given string into an array of all possible substrings - including the case of the empty string
     if (s.length == 0) { 
         array_of_substrings.push(s)
-        console.log(`Array length is currently ${array_of_substrings.length}`)
+        console.log(`Array contains a single empty string with length ${array_of_substrings.length}`)
+        return s.length
     } else {
     for (i=0; i<s.length; i++) {
         if (substring.includes(s[i])) {
@@ -20,11 +22,20 @@ var lengthOfLongestSubstring = function(s) {
             console.log(`Array is currently ${array_of_substrings}`)
         } else { 
             substring = substring + s[i]    
-            console.log(`substring is currently ${substring}`)
-            console.log(`i is currently ${i}`)
         }
     }
     }
-    //Once all characters have been checked find the substring in the array that has the longest length property 
+    //Find the substring in the array that has the longest length property 
+
+    //To find the max in an array, get an inspector that is smaller than any possible length value in the array
+    //compare  all elements to said inspector & replace the value of the inspector if the elements length property is larger than the inspector 
+    longest_substring_length = 0; 
+    for (j=0; j<array_of_substrings.length; j++) {
+        if (array_of_substrings[j].length > longest_substring_length) {
+            longest_substring_length = array_of_substrings[j].length
+        }
+    }
+    console.log(`The largest substring has length property =  ${longest_substring_length} `)
     //Return the length of longest substring
+    return longest_substring_length
 };
