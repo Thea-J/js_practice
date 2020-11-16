@@ -29,9 +29,6 @@ var lengthOfLongestSubstring = function(s) {
     }
     }
     //Find the substring in the array that has the longest length property 
-
-    //To find the max in an array, get an inspector that is smaller than any possible length value in the array
-    //compare  all elements to said inspector & replace the value of the inspector if the elements length property is larger than the inspector 
     longest_substring_length = 0; 
     for (j=0; j<array_of_substrings.length; j++) {
         if (array_of_substrings[j].length > longest_substring_length) {
@@ -41,3 +38,6 @@ var lengthOfLongestSubstring = function(s) {
     console.log(`The largest substring has length property =  ${longest_substring_length} `)
     return longest_substring_length
 };
+
+    //To find the max in an array, get an inspector that is smaller than any possible length value in the array
+    //compare  all elements to said inspector & replace the value of the inspector if the elements length property is larger than the inspector 
