@@ -14,6 +14,11 @@ var lengthOfLongestSubstring = function(s) {
         console.log(`Array contains a single empty string with length ${array_of_substrings.length}`)
         return s.length
     } else {
+    //Iterate over each character of a string & add each character to the substring
+    //When a character is repeated stop execution:
+    //Do not add the repeated character to the substring
+    //Add the current substring to the array_of_substrings
+    //Start the process again from the character AFTER the repeated character FIRST appeared 
     for (i=0; i<s.length; i++) {
         if (substring.includes(s[i])) {
             array_of_substrings.push(substring)
