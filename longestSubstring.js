@@ -7,6 +7,7 @@
 var lengthOfLongestSubstring = function(s) {
     let array_of_substrings = [];
     let substring = ""
+    let array_of_returned_to_indices = []
 
     //Split any given string into an array of all possible substrings - including the case of the empty string
     if (s.length == 0) { 
@@ -29,6 +30,7 @@ var lengthOfLongestSubstring = function(s) {
             substring = substring.replace(substring, s[i])
             console.log(`The current substring is ${substring} but it should start from letter V`)
     //Edit above here
+    
             if (i == s.length-1) {array_of_substrings.push(s[i])}
             console.log(`Array is currently ${array_of_substrings}`)
 
