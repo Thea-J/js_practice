@@ -10,7 +10,7 @@ var lengthOfLongestSubstring = function(s) {
     let array_of_returned_to_indices = []
 
     //Split any given string into an array of all possible substrings - including the case of the empty string
-    if (s.length == 0) { 
+    if (typeof(s) == "string" && s.length == 0) { 
         array_of_substrings.push(s)
         console.log(`Array contains a single empty string with length ${array_of_substrings.length}`)
         return s.length
@@ -22,7 +22,7 @@ var lengthOfLongestSubstring = function(s) {
     //Start the process again from the character AFTER the repeated character FIRST appeared 
             //Find the index of the first instance of the repeated character 
             let repeated_character_index = s.indexOf(s[i])
-            console.log(`The index of the first instance of the repeated character is ${repeated_character_index}`)
+            console.log(`The index of the first instance of the repeated character is ${repeated_character_index}, the letter is ${s[i]}`)
             console.log(`Index ${i} will go back now`)
     //Start execution from the index after that
             i = repeated_character_index + 1
@@ -30,7 +30,7 @@ var lengthOfLongestSubstring = function(s) {
             substring = substring.replace(substring, s[i])
             console.log(`The current substring is ${substring} but it should start from letter V`)
     //Edit above here
-    
+
             if (i == s.length-1) {array_of_substrings.push(s[i])}
             console.log(`Array is currently ${array_of_substrings}`)
 
