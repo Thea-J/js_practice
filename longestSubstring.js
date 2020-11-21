@@ -7,28 +7,27 @@
 var lengthOfLongestSubstring = function(s) {
     let array_of_substrings = [];
     let substring = ""
-    let array_of_returned_to_indices = []
+    let string_copy = ""
 
     //Split any given string into an array of all possible substrings - including the case of the empty string
     if (typeof(s) == "string" && s.length == 0) { 
         array_of_substrings.push(s)
-        console.log(`Array contains a single empty string with length ${array_of_substrings.length}`)
         return s.length
     } else {
     for (i=0; i<s.length; i++) {
+        i == 0 ? string_copy : string_copy = string_copy + s[i-1]
+        // console.log(`AT INDEX ${i} string_copy is ${string_copy}`)
         if (substring.includes(s[i])) {
             array_of_substrings.push(substring)
-
-    //Start the process again from the character AFTER the repeated character FIRST appeared 
-            //Find the index of the first instance of the repeated character 
-            let repeated_character_index = s.indexOf(s[i])
-            console.log(`The index of the first instance of the repeated character is ${repeated_character_index}, the letter is ${s[i]}`)
-            console.log(`Index ${i} will go back now`)
+    //Start the process again from the character AFTER the repeated character MOST RECENTLY appeared 
+    //Find the index of the most recent instance of the repeated character 
+            let repeated_character_index = string_copy.lastIndexOf(s[i])
+            console.log(`FOUND A REPEATED CHARACTER ${s[i]} AT Index ${i}`)
+            console.log(`THIS WAS PREVIOUSLY AT INDEX ${repeated_character_index}`)
     //Start execution from the index after that
             i = repeated_character_index + 1
-            console.log(`The current index is ${i}`)
+            console.log(`Going back to index ${i}`)
             substring = substring.replace(substring, s[i])
-            console.log(`The current substring is ${substring} but it should start from letter V`)
     //Edit above here
 
             if (i == s.length-1) {array_of_substrings.push(s[i])}
@@ -36,9 +35,8 @@ var lengthOfLongestSubstring = function(s) {
 
         } else { 
             substring = substring + s[i]   
-            console.log(`substring is currently ${substring}`)
+            // console.log(`substring is currently ${substring}`)
             if (i == s.length-1) {array_of_substrings.push(substring)}
-            console.log(`At the last character & Array is currently ${array_of_substrings}`)
         }
     }
     }
