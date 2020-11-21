@@ -1,9 +1,28 @@
-//Practice code goes here
+//Practice goes here
 
-//example: let string = "a b c a b c b b" < lengthOfLongestSubstring = 3 for substring "vdf"
-//example: let string = "0 1 2 3 4 5 6 7"
- // 1: sub = "abc" stop at i=3 back to i=1
- // 2: sub = "bca" stop at i=4 back to i=2
- // 3: sub = "cab" stop at i=5 back to i=3
- // 4: sub = "abc" stop at i=6 back to i=1 << should be going back to i=5
- 
+var lengthOfLongestSubstring = function(s) {
+    let array_of_substrings = [];
+    let substring = ""
+
+    for (let i=0; i<s.length; i++){
+        if (substring.includes(s[i])){
+            array_of_substrings.push(substring)
+            console.log(`FOUND A REPEATED CHARACTER ${s[i]} AT Index ${i} & Array is currently ${array_of_substrings}`)
+
+            let repeated_character_index = s.slice(0,i).lastIndexOf(s[i])
+            console.log(`THIS WAS PREVIOUSLY AT INDEX ${repeated_character_index}`)
+            i = repeated_character_index + 1
+            console.log(`Going back to index ${i}`)
+            substring = substring.replace(substring, s[i])
+
+
+
+
+            if (i == s.length-1) {array_of_substrings.push(s[i])}
+        } else { 
+            substring = substring + s[i]   
+            if (i == s.length-1) {array_of_substrings.push(substring)}
+        }
+    }
+    console.log(`Array is currently ${array_of_substrings}`)
+}
