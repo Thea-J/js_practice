@@ -9,9 +9,12 @@ For multiples of 3 & 5, print string "FizzBuzz" instead of the number */
 // Print a number or string dependant on the factors of each number 
 
 const fizzbuzz = () => {
-for (i=1; i<=100; i+=1){
-    console.log(i)
-}
+    for (i=1; i<=100; i+=1){
+        if (i%3 == 0 && i%5 == 0) {console.log("FizzBuzz")}
+        else if (i%3 == 0) {console.log("Fizz")}
+        else if (i%5 == 0) {console.log("Buzz")}
+        else {(console.log(i))}
+    }   
 }
 
 fizzbuzz();
