@@ -8,13 +8,13 @@ For multiples of 3 & 5, print string "FizzBuzz" instead of the number */
 // Define a conditional statement that checks if each value is a multiple of 3, 5 or both 3 & 5
 // Print a number or string dependant on the factors of each number 
 
-const fizzbuzz = () => {
+const fizzbuzz = (bothMultiples, multipleOfThree, multipleOfFive) => {
     for (let i=1; i<=100; i+=1){
-        if (i%3 == 0 && i%5 == 0) {console.log("FizzBuzz")}
-        else if (i%3 == 0) {console.log("Fizz")}
-        else if (i%5 == 0) {console.log("Buzz")}
+        if (i%3 == 0 && i%5 == 0) {console.log(bothMultiples)}
+        else if (i%3 == 0) {console.log(multipleOfThree)}
+        else if (i%5 == 0) {console.log(multipleOfFive)}
         else {(console.log(i))}
     }   
 }
 
-fizzbuzz();
+fizzbuzz("FizzBuzz", "Fizz", "Buzz");
