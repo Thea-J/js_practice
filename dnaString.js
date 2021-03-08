@@ -35,3 +35,29 @@ function DNAStrand(dna){
 
 //Print in the terminal the return value of the function solution
 console.log(DNAStrand("AAAA"))
+
+
+// ANOTHER SMART WORKING SOLUTION 
+function SwitchDNA(dna){
+
+    //Define an empty string called newDNA
+    let newDNA = ""
+
+    //Define the Object dnaPairs that pairs a character with its complement character
+    let dnaPairs = {
+        "A" : "T",
+        "T" : "A",
+        "C" : "G",
+        "G" : "C"
+    }
+
+    //Declare a for loop that iterates over the string dna
+    // and populates the string newDNA using the key-value pairs from the Object dnaPairs 
+    for (let i=0; i<dna.length; i+=1){
+        newDNA += dnaPairs[dna[i]]
+    }
+    return newDNA
+}
+
+//Print in the terminal the return value of the function solution
+console.log(SwitchDNA("GTAT"))
