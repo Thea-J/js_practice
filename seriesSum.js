@@ -10,7 +10,7 @@ function SeriesSum(n){
     if (n === 0 || n === 1){
         return`${n.toFixed(2)}` //Must use .toFixed() otherwise JS will round 0.00 to 0
     } 
-    
+
     //Start iteration from n=2
     //Multiply each iterationStep with i - in the series definition, in each iteration 3 is added to the denominator
     else {
@@ -28,6 +28,18 @@ function SeriesSum(n){
 // Test.assertEquals(SeriesSum(4), "1.49")
 
 
+// ANOTHER SMART WORKING SOLUTION 
+function SeriesSum2(n){
+    let sum = 0;
+        
+    for (let i=0; i<n; i+=1){
+        sum += 1.00/(1+(3*i))        
+    }
+
+    return`${sum.toFixed(2)}` 
+}
+
 
 //Print in the terminal the return value of the function solution
-console.log(SeriesSum(5))
+// console.log(SeriesSum(5))
+console.log(SeriesSum2(5))
