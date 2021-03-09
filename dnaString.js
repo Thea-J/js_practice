@@ -38,6 +38,7 @@ console.log(DNAStrand("AAAA"))
 
 
 // ANOTHER SMART WORKING SOLUTION 
+
 function SwitchDNA(dna){
 
     //Define an empty string called newDNA
