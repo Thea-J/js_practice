@@ -3,9 +3,13 @@
 function findUniq(arr) {
     // Define a comparison variable with a null value
     // Iterate over the given array
-    // Set the comparison variable to the first array element
-    // Compare the array elements to the comparison variable 
-    // Reassign the value of the comparison variable if it differs from the other array elements
+    // Create an Object that stores each number & the count of that number
+    // Iterate through the Object and find the key whose value is <1
+    let comparisonVariable = null ;
+    for (let i=0; i<arr.length; i+=1){
+
+    }
+    return comparisonVariable
 }
 
 //Test Cases:
