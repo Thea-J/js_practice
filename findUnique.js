@@ -1,15 +1,22 @@
 //Find the unique element in an array
 
 function findUniq(arr) {
-    // Define a comparison variable with a null value
+    let numbersTally = {};
     // Iterate over the given array
-    // Create an Object that stores each number & the count of that number
-    // Iterate through the Object and find the key whose value is <1
-    let comparisonVariable = null ;
     for (let i=0; i<arr.length; i+=1){
-
+        let element = arr[i];
+        // Create an Object that stores each number & the count of that number
+        if (numbersTally[element]){
+            numbersTally[element] += 1;
+        }
+        else {numbersTally[element] = 1}
     }
-    return comparisonVariable
+    // Iterate through the Object and return the key whose value is = 1
+    for (const number in numbersTally){
+        if (numbersTally[number] === 1){
+            return number;
+        }
+    }
 }
 
 //Test Cases:
