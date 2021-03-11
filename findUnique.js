@@ -14,7 +14,7 @@ function findUniq(arr) {
     // Iterate through the Object and return the key whose value is = 1
     for (const number in numbersTally){
         if (numbersTally[number] === 1){
-            return number;
+            return parseInt(number);
         }
     }
 }
