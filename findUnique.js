@@ -1,4 +1,5 @@
 //Find the unique element in an array
+//Edge cases to consider: whole numbers, decimals 
 
 function findUniq(arr) {
     let numbersTally = {};
