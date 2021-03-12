@@ -31,3 +31,9 @@ function findUniq(arr) {
 
 //Print in the terminal the return value of the function solution
 console.log(findUniq([ 3, 0.55, 3, 3, 3 ]))
+
+//A more elegant way to write the above if/else:
+// for (let i=0; i<arr.length; i+=1){
+//     let element = arr[i];
+//     numbersTally[element] = numbersTally[element] + 1 || 1;
+// }
